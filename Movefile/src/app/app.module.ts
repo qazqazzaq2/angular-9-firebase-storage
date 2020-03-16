@@ -6,15 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';
-import { DownloadComponent } from './download/download.component';
-import { UploadComponent } from './upload/upload.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DownloadComponent,
-    UploadComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
