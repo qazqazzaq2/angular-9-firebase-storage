@@ -1,4 +1,24 @@
 .card{
-  width:1500px;
-  margin-left: 200px;
+  width:1800px;
+  margin-left: 55px;
+}
+
+table{
+  width:95%;
+  text-align:center;
+
+}
+td {
+  min-width: 0px;
+  max-width: 50px;
+  max-height: 50px;
+  min-height: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+span.description {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 150px;
 }

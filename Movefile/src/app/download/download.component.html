@@ -11,15 +11,16 @@
       <button  mat-flat-button color="warn" routerLink="/upload">อัพโหลด</button>&nbsp;&nbsp;&nbsp;<button  mat-flat-button color="warn">ดาวน์โหลด</button>
     </div>
     <div class="card-body">
-      <h5 class="card-title"> <b>ไฟล์ดาวน์โหลด</b></h5>
-      <table border="1">
+      <h5 class="card-title"> <b>ไฟล์ดาวน์โหลด</b> <b style="color:red; margin-left: 70%" >***ไฟล์ .tif รูปจะไม่ขึ้น</b></h5>
+      <table border="1" width="500px">
         <tr align="center">
-          <th align="center">เลข</th><th align="center">ชื่อ</th><th align="center">ลิงค์</th>
+          <th align="center">เลข</th><th align="center">ชื่อ</th><th align="center">ลิงค์</th><th>รูป</th>
         </tr>
         <tr *ngFor = "let links of LinkDownload">
-          <td width="50" align="center" height="100px">{{links.id}}</td>
-          <td width="200" align="center">{{links.workname}}</td>
+          <td width="150px" height="50px">{{links.id}}</td>
+          <td  width="500px">{{links.workname}}</td>
           <td><a [href]="links.workurl">{{links.workurl}}</a></td>
+          <td><img src="{{links.workurl}}" height="100px" type="image/tif"/></td>
         </tr>
       </table>
     </div>

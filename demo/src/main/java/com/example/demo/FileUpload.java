@@ -1,6 +1,8 @@
 package com.example.demo;
 
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +16,7 @@ public class FileUpload {
     private Long id;
 
     private String workname;
+    @Length(max = 8000)
     private String workurl;
     private Date workdate;
 
