@@ -6,7 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { DownloadComponent} from './download/download.component';
 import {UploadComponent} from './upload/upload.component';
-
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,15 @@ import {UploadComponent} from './upload/upload.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp({
+      apiKey: 'AIzaSyBF-G9AuFHQ3TNwg25Ft27F3Cknq9GQiqE',
+      authDomain: 'movefile-58783.firebaseapp.com',
+      storageBucket: 'movefile-58783.appspot.com',
+      projectId: 'movefile-58783',
+    }),
+    AngularFireStorageModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

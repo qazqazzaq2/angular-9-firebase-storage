@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class File {
+public class FileUpload {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -17,7 +17,7 @@ public class File {
     private String workurl;
     private Date workdate;
 
-    public File(){}
+    public FileUpload(){}
 
     public Long getId() {
         return id;

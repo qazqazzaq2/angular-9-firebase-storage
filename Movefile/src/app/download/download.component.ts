@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ControllerService} from '../Service/controller.service';
 
 @Component({
   selector: 'app-download',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DownloadComponent implements OnInit {
 
-  constructor() { }
+  // tslint:disable-next-line:ban-types
+  LinkDownload: Object;
+  constructor(private service: ControllerService) { }
 
   ngOnInit(): void {
+
+    this.service.getLinkdownload().subscribe(data => {
+      this.LinkDownload = data;
+      console.log(data);
+    });
+
   }
 
 }

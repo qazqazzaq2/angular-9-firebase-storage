@@ -1,12 +1,20 @@
-<div class="container">
+<body background="../../assets/unnamed.jpg">
+
+  <br>
   <div class="card">
+    <div align="center">
+      <img src="../../assets/safe-1.jpg" width="600" align="center">
+    </div>
     <div class="card-header">
-      Move file TOP KARNPIM <br>
-      <button>Upload</button>&nbsp;&nbsp;&nbsp;<button routerLink="/download">Download</button>
+
+      <button mat-flat-button color="warn">อัพโหลด</button>&nbsp;&nbsp;&nbsp;<button  mat-flat-button color="warn" routerLink="/download">ดาวน์โหลด</button>
     </div>
     <div class="card-body">
-      <h5 class="card-title">Select a file for upload:</h5>
-      <input type="file" (change)="upload($event)" accept=".png,.jpg" />
+      <h5 class="card-title" ><b>เลือกไฟล์เพื่ออัพโหลด</b></h5>
+
+
+        <input type="file" (change)="upload($event)" />
+
       <br><br>
       <div class="progress">
         <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100"></div>
@@ -23,4 +31,5 @@
       </div>
     </div>
   </div>
-</div>
+
+</body>

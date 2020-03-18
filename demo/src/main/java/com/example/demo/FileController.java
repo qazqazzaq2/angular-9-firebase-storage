@@ -4,6 +4,7 @@ package com.example.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
 import java.text.ParseException;
 import java.util.Collection;
 import java.util.Date;
@@ -20,17 +21,22 @@ public class FileController {
 
 
     @PostMapping("/upload")
-    public Collection<File> uploadfile(@RequestBody Map<String, String> body)
+    public Collection<FileUpload> uploadfile(@RequestBody Map<String, String> body)
             throws ParseException {
 
         String workname = body.get("workname").toString();
         String workurl = body.get("workurl").toString();
 
-        File file = new File();
+        FileUpload file = new FileUpload();
         file.setWorkdate(new Date());
         file.setWorkname(workname);
         file.setWorkurl(workurl);
         fileRepository.save(file);
+        return fileRepository.findAll().stream().collect(Collectors.toList());
+    }
+
+    @GetMapping("/Download")
+    public Collection<FileUpload> Actives() {
         return fileRepository.findAll().stream().collect(Collectors.toList());
     }
 }
